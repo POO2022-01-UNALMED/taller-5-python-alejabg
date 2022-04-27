@@ -24,14 +24,11 @@ class Animal:
         +"Peces : "+str(len(Pez.getListado()))+"\n"
         +"Anfibios : "+str(len(Anfibio.getListado()))+"\n")
 
-
     def toString(self):
-        if self.getZona()!=[]:
-            return("Mi nombre es "+str(self.getNombre())+", tengo una edad de "+str(self.getEdad())+", habito en "
-        +str(self.getHabitat())+" y mi genero es "+str(self.getGenero())+", la zona en la que me ubico es "+
-        str(self.getZona().getNombre())+", en el "+str(self.getZona().getZoo().getNombre()))
-        return ("Mi nombre es "+str(self.getNombre())+", tengo una edad de "+str(self.getEdad())+", habito en "
-        +str(self.getHabitat())+" y mi genero es "+str(self.getGenero()))
+        if self._zona is None:
+            return "Mi nombre es {}, tengo una edad de {}, habito en {} y mi genero es {}".format(self._nombre, self._edad, self._habitat,self._genero)
+        else:
+            return "Mi nombre es {}, tengo una edad de {}, habito en {} y mi genero es {}, la zona en la que me ubico es {}, en el {}".format(self._nombre, self._edad, self._habitat, self._genero, self._zona.getNombre(), self._zona._zoo.getNombre())
     
     @staticmethod
     def movimiento(cls):

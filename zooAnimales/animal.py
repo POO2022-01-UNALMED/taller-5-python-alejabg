@@ -12,7 +12,7 @@ class Animal:
         Animal._totalAnimales += 1
 
     @staticmethod
-    def totalPorTipo(cls):
+    def totalPorTipo():
         from zooAnimales.ave import Ave
         from zooAnimales.mamifero import Mamifero
         from zooAnimales.pez import Pez

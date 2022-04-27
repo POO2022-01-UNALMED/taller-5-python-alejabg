@@ -11,18 +11,15 @@ class Animal:
         self._zona = None
         Animal._totalAnimales += 1
 
+    @staticmethod
     def totalPorTipo(cls):
         from zooAnimales.ave import Ave
         from zooAnimales.mamifero import Mamifero
         from zooAnimales.pez import Pez
         from zooAnimales.reptil import Reptil
-        from zooAnimales.anfibio import Anfibio       
+        from zooAnimales.anfibio import Anfibio    
 
-        return ("Mamiferos : "+str(len(Mamifero.getListado()))+"\n"
-        +"Aves : "+str(len(Ave.getListado()))+"\n"
-        +"Reptiles : "+str(len(Reptil.getListado()))+"\n"
-        +"Peces : "+str(len(Pez.getListado()))+"\n"
-        +"Anfibios : "+str(len(Anfibio.getListado()))+"\n")
+        return "Mamiferos : {}\nAves : {}\nReptiles : {}\nPeces : {}\nAnfibios : {}".format(Mamifero.cantidadMamiferos(), Ave.cantidadAves(), Reptil.cantidadReptiles(), Pez.cantidadPeces(), Anfibio.cantidadAnfibios())
 
     def toString(self):
         if self._zona is None:

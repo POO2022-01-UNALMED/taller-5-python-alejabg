@@ -14,7 +14,7 @@ class Ave(Animal):
         return "volarr"
 
     @classmethod
-    def cantidadReptiles(cls):
+    def cantidadAves(cls):
         return len(cls._listado)
 
     @classmethod
